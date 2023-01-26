@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../campaign/.idea/campaign.iml" filepath="$PROJECT_DIR$/../campaign/.idea/campaign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/nexus-topup.iml" filepath="$PROJECT_DIR$/.idea/nexus-topup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../php-mvc/.idea/php-app.iml" filepath="$PROJECT_DIR$/../php-mvc/.idea/php-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../topup-process/.idea/topup-process.iml" filepath="$PROJECT_DIR$/../topup-process/.idea/topup-process.iml" />
+    </modules>
+  </component>
+</project>
