@@ -7,7 +7,7 @@ if(isset($_POST['saveNewAdmin'])){
         $tableName = "admins";
         $columnValue["admin_name"]   = $_POST['adminName'];
         $columnValue["admin_email"]  = $_POST['adminEmail'];
-        $columnValue["admin_pass"]   = md5($_POST['adminPass']);
+        $columnValue["admin_pass"]   = bcrypt($_POST['adminPass']);
         $columnValue["admin_status"] = $_POST['adminStatus'];
         $registerUser = $eloquent->insertData($tableName, $columnValue);
     }

@@ -1,5 +1,5 @@
 <?php
 $GLOBALS['DBHOST'] = "localhost";
-$GLOBALS['DBNAME'] = "nexus_topup";
+$GLOBALS['DBNAME'] = "nex_topup";
 $GLOBALS['DBUSER'] = "root";
 $GLOBALS['DBPASS'] = "RootPass!@";

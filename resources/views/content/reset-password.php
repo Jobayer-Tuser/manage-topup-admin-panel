@@ -3,47 +3,6 @@
 <?php
 use App\Http\Controllers\LoginController;
 
-$loginCtrl = new LoginController();
-
-## ===*=== [LOGIN] ACCESS ===*=== ##
-/**
- * @param string $id
- * @param string $role
- * @param string $name
- * @param string $email
- * @param string $status
- * @return void
- */
-function userSessionData(string $id, string $role, string $name, string $email, string $status): void
-{
-    $_SESSION['USER_LOGIN_TIME'] = date("Y-m-d H:i:s");
-    $_SESSION['USER_LOGIN_ID'] = $id;
-    $_SESSION['USER_LOGIN_ROLE'] = $role;
-    $_SESSION['USER_LOGIN_NAME'] = $name;
-    $_SESSION['USER_LOGIN_EMAIL'] = $email;
-    $_SESSION['USER_LOGIN_STATUS'] = $status;
-}
-
-if(isset($_POST['try_login']))
-{
-    $email = $loginCtrl->mailCheck($_POST['userEmail']);
-    $password = $loginCtrl->passCheck($_POST['userPass']);
-    $userData = $loginCtrl->tryLogin( $email, $password);
-    $userData = $userData[0];
-
-    if(!empty($userData) && $userData["role"] == "Admin")
-    {
-        userSessionData($userData['id'], $userData['role'], $userData['admin_name'],  $userData['admin_email'], $userData['admin_status']);
-        echo "<script> window.location.href = 'dashboard.php'; </script>";
-    } else if (!empty($userData) && $userData["role"] == "User")
-    {
-        userSessionData($userData['id'], $userData['role'], $userData['full_name'],  $userData['username'],  $userData["status"]);
-        echo "<script> window.location.href = 'dashboard.php'; </script>";
-    } else{
-        header("Location:index.php");
-
-    }
-}
 ?>
 <head>
     <meta charset="utf-8">

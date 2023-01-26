@@ -18,12 +18,7 @@
             </div>
         </div>
         <div class="shadow-bottom"></div>
-        <?php
-//        $active = match (getPageName()){
-//            "list-admin", "list-campaign", "add-admin", "add-campaign", "list-company", "add-company" => "active",
-//        };
 
-        $menu = <<<EOD
         <ul class="list-unstyled menu-categories" id="accordionExample">
             <li class="menu">
                 <a href="dashboard.php" aria-expanded="false" class="dropdown-toggle">
@@ -33,7 +28,7 @@
                     </div>
                 </a>
             </li>
-            
+            <?php if (isset($_SESSION['USER_LOGIN_ROLE']) && $_SESSION['USER_LOGIN_ROLE'] == "Admin"): ?>
             <li class="menu">
                 <a href="list-admin.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
@@ -50,6 +45,7 @@
                     </div>
                 </a>
             </li>
+            <?php endif ?>
             <li class="menu">
                 <a href="add-company.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
@@ -88,8 +84,5 @@
                 </ul>
             </li>
         </ul>
-        EOD;
-        echo $menu;
-        ?>
     </nav>
 </div>
