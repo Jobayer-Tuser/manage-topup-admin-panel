@@ -176,6 +176,7 @@ $contactList = $eloquent->selectJoinData($columnName, $tableName, $joinType, $on
                     <div class="col-md-4">
                         <a href="public/uploads/contacts/contacts-demo.xlsx" class="btn btn-info" style="margin-top: 36px">Download Example</a>
                     </div>
+                    <p class="help-block note text-info"><i><strong>Note: File should be XLS or XLSX and Maximum Record : 5000, Max File Size : 1MB</strong></i></p>
                     <div class="col-md-12">
                         <button name="saveNewContactExcel" type="submit" class="btn btn-success float-end">Save</button>
                     </div>
@@ -196,7 +197,7 @@ $contactList = $eloquent->selectJoinData($columnName, $tableName, $joinType, $on
                     <th>Contact Number</th>
                     <th>Contact Operator</th>
                     <th>Contact Type</th>
-                    <th width="15%">Action</th>
+                    <th style="min-width: 15px">Action</th>
                 </tr>
                 </thead>
                 <tbody>

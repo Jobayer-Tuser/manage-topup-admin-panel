@@ -60,9 +60,9 @@ $contactGroups = $eloquent->selectData($columnName, $tableName);
                         <label for="" class="col-sm-2 col-form-label">Campaign Title</label>
                         <div class="col-md-10">
                             <input name="campaignTitle" type="text" class="form-control" id="campaignTitle" required />
+                            <p class="help-block note text-info"><i><strong>Note: Max 80 character !</strong></i></p>
                         </div>
                     </div>
-
                     <fieldset class="row mb-3">
                         <legend class="col-form-label col-sm-2 pt-0">Select contact from</legend>
                         <div class="col-sm-10">
@@ -86,6 +86,7 @@ $contactGroups = $eloquent->selectData($columnName, $tableName);
                         <label for="contactList" class="col-sm-2 col-form-label">Upload Contact List</label>
                         <div class="col-md-4">
                             <input name="contactFile" type="file" class="form-control" id="contactList"/>
+                                <p class="help-block note text-info"><i><strong>Note: Upload XLS or XLSX file with max 5000 records</strong></i></p>
                         </div>
                         <div class="col-md-4">
                             <a href="public/uploads/contacts/campaign-contacts.xlsx" class="btn btn-info" style="margin-top: 5px">Download Example</a>
