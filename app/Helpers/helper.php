@@ -67,3 +67,22 @@ function bcrypt($password) : string {
 function verify_pass($inputPass, $dbPass ) : bool {
     return password_verify($inputPass, $dbPass);
 }
+
+/**
+ * @param string $id
+ * @param string $role
+ * @param string $name
+ * @param string $email
+ * @param string $status
+ * @return array
+ */
+function setUserSessionData(string $id, string $role, string $name, string $email, string $status): array
+{
+    $_SESSION['user_login_time'] = time();
+    $_SESSION['user_login_id'] = $id;
+    $_SESSION['user_login_role'] = $role;
+    $_SESSION['user_login_name'] = $name;
+    $_SESSION['user_login_email'] = $email;
+    $_SESSION['user_login_status'] = $status;
+    return $_SESSION;
+}

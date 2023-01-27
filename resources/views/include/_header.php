@@ -82,7 +82,7 @@
                                 &#x1F44B;
                             </div>
                             <div class="media-body">
-                                <h5><?php echo $_SESSION['USER_LOGIN_NAME'] ?? "No name"; ?></h5>
+                                <h5><?php echo $_SESSION['user_login_name'] ?? "No name"; ?></h5>
                                 <p></p>
                             </div>
                         </div>

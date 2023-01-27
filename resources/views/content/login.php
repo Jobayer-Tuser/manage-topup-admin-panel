@@ -7,26 +7,6 @@ use App\Http\Controllers\LoginController;
 $loginCtrl = new LoginController();
 
 ## ===*=== [LOGIN] ACCESS ===*=== ##
-/**
- * @param string $id
- * @param string $role
- * @param string $name
- * @param string $email
- * @param string $status
- * @return array
- */
-function setUserSessionData(string $id, string $role, string $name, string $email, string $status): array
-{
-    session_regenerate_id();
-    $_SESSION['USER_LOGIN_TIME'] = date("Y-m-d H:i:s");
-    $_SESSION['USER_LOGIN_ID'] = $id;
-    $_SESSION['USER_LOGIN_ROLE'] = $role;
-    $_SESSION['USER_LOGIN_NAME'] = $name;
-    $_SESSION['USER_LOGIN_EMAIL'] = $email;
-    $_SESSION['USER_LOGIN_STATUS'] = $status;
-    return $_SESSION;
-}
-
 if(isset($_POST['try_login']))
 {
     $email = $loginCtrl->mailCheck($_POST['userEmail']);
