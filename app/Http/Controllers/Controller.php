@@ -268,6 +268,7 @@ class Controller
     public function redirectPage(string $page) : void
     {
         header("Location: {$page}", true, 301);
+        exit();
     }
 
 }

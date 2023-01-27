@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -12,16 +13,18 @@ $loginCtrl = new LoginController();
  * @param string $name
  * @param string $email
  * @param string $status
- * @return void
+ * @return array
  */
-function userSessionData(string $id, string $role, string $name, string $email, string $status): void
+function setUserSessionData(string $id, string $role, string $name, string $email, string $status): array
 {
+    session_regenerate_id();
     $_SESSION['USER_LOGIN_TIME'] = date("Y-m-d H:i:s");
     $_SESSION['USER_LOGIN_ID'] = $id;
     $_SESSION['USER_LOGIN_ROLE'] = $role;
     $_SESSION['USER_LOGIN_NAME'] = $name;
     $_SESSION['USER_LOGIN_EMAIL'] = $email;
     $_SESSION['USER_LOGIN_STATUS'] = $status;
+    return $_SESSION;
 }
 
 if(isset($_POST['try_login']))
@@ -31,17 +34,12 @@ if(isset($_POST['try_login']))
     $userData = $loginCtrl->tryLogin( $email, $password);
     $userData = $userData[0];
 
-    if(!empty($userData) && $userData["role"] == "Admin")
-    {
-        userSessionData($userData['id'], $userData['role'], $userData['admin_name'],  $userData['admin_email'], $userData['admin_status']);
-        echo "<script> window.location.href = 'dashboard.php'; </script>";
-    } else if (!empty($userData) && $userData["role"] == "User")
-    {
-        userSessionData($userData['id'], $userData['role'], $userData['full_name'],  $userData['username'],  $userData["status"]);
-        echo "<script> window.location.href = 'dashboard.php'; </script>";
-    } else{
+    if(!empty($userData) && $userData["role"] == "Admin") {
+        setUserSessionData($userData['id'], $userData['role'], $userData['admin_name'], $userData['admin_email'], $userData['admin_status']);
+    } else if (!empty($userData) && $userData["role"] == "User") {
+        setUserSessionData($userData['id'], $userData['role'], $userData['full_name'],  $userData['username'],  $userData["status"]);
+    } else {
         header("Location:index.php");
-
     }
 }
 ?>
@@ -74,7 +72,20 @@ if(isset($_POST['try_login']))
 
                             </div>
                             <form action="" method="post">
+                                <div class="col-md-12">
+                                    <?php
+                                    if(isset($_POST['try_login'])){
+                                        if(empty($userData)) {
+                                            echo '<div class="alert alert-danger">
+                                                    Sorry Wrong Username or Password !
+                                                </div>';
+                                        } else {
+                                            header("location:dashboard.php");
+                                        }
+                                    }
+                                    ?>
 
+                                </div>
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label class="form-label">Email</label>
