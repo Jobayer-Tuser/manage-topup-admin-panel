@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Eloquent;
+use App\Models\Database;
 use PDO;
 
 class LoginController extends Controller
@@ -10,7 +10,7 @@ class LoginController extends Controller
 
     public function __construct()
     {
-        $this->db = Eloquent::getInstance();
+        $this->db = Database::getInstance();
     }
 
     ## [L]ogin Function | ADMIN LOGIN

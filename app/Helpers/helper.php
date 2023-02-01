@@ -1,5 +1,5 @@
 <?php
-use App\Models\Eloquent;
+use App\Models\Database;
 
     function notification(string $status, string $message): string
     {
@@ -53,7 +53,7 @@ function pageTitle() : string {
 }
 
 function deleteData($table_name, $where_value) : bool {
-    $eloquent = Eloquent::getInstance();
+    $eloquent = Database::getInstance();
     $tableName = $table_name;
     $whereValue["id"] = $where_value;
     return $eloquent->deleteData($tableName, $whereValue);

@@ -1,6 +1,6 @@
 <?php
-use App\Models\Eloquent;
-$eloquent = Eloquent::getInstance();
+use App\Models\Database;
+$eloquent = Database::getInstance();
 
 ## ===*=== [U]UPDATE ADMIN DATA ===*=== ##
 if(isset($_POST['updateCompany'])){

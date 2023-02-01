@@ -1,9 +1,9 @@
 <?php
-use App\Models\Eloquent;
+use App\Models\Database;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 use PhpOffice\PhpSpreadsheet\Reader\Exception;
 
-$eloquent = Eloquent::getInstance();
+$eloquent = Database::getInstance();
 $reader = new Xlsx();
 
 if(isset($_POST['saveNewContactList'])){

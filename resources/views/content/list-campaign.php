@@ -1,6 +1,6 @@
 <?php
-use App\Models\Eloquent;
-$eloquent = Eloquent::getInstance();
+use App\Models\Database;
+$eloquent = Database::getInstance();
 
 if(isset($_POST['addCampaign'])){
     if(!empty($_POST['campaignT']) && !empty($_POST['serviceType']) && !empty($_POST['totalCNum']) && !empty($_POST['totalRechAmount'])&& !empty($_POST['campaignStat'])){

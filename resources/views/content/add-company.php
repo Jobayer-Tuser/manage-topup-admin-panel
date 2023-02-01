@@ -1,6 +1,6 @@
 <?php
-use App\Models\Eloquent;
-$eloquent = Eloquent::getInstance();
+use App\Models\Database;
+$eloquent = Database::getInstance();
 
 if(isset($_POST['saveNewCompany'])){
     if(!empty($_POST['companyName']) && !empty($_POST['companyAddress']) && !empty($_POST['companyWebsite'])){

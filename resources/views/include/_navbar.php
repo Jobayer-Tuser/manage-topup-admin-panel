@@ -28,7 +28,7 @@
                     </div>
                 </a>
             </li>
-            <?php if (isset($_SESSION['USER_LOGIN_ROLE']) && $_SESSION['USER_LOGIN_ROLE'] == "Admin"): ?>
+            <?php if (isset($_SESSION['user_login_role']) && $_SESSION['user_login_role'] == "Admin"): ?>
             <li class="menu">
                 <a href="list-admin.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
@@ -82,8 +82,6 @@
                     </div>
                 </a>
             </li>
-           
-
         </ul>
     </nav>
 </div>

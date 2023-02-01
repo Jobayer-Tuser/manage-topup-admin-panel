@@ -1,9 +1,9 @@
 <?php
-use App\Models\Eloquent;
+use App\Models\Database;
 use App\Http\Controllers\CampaignController;
 
 $campCtrl = new CampaignController();
-$eloquent = Eloquent::getInstance();
+$eloquent = Database::getInstance();
 
 if(isset($_POST["processCampaign"])){
 

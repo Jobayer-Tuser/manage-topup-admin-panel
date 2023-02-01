@@ -1,6 +1,6 @@
 <?php
-use App\Models\Eloquent;
-$eloquent = Eloquent::getInstance();
+use App\Models\Database;
+$eloquent = Database::getInstance();
 
 if(isset($_POST['saveNewAdmin'])){
     if(!empty($_POST['adminName']) && !empty($_POST['adminEmail']) && !empty($_POST['adminPass']) && !empty($_POST['adminStatus'])){
