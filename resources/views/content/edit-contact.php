@@ -1,7 +1,7 @@
 <?php
-use App\Models\Database;
+use App\Models\Eloquent;
 
-$eloquent = Database::getInstance();
+$eloquent = Eloquent::getInstance();
 
 if(isset($_POST['updateContact'])){
     $tableName = "contact_lists";

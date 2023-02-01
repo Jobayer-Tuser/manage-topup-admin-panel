@@ -1,6 +1,6 @@
 <?php
-use App\Models\Database;
-$eloquent = Database::getInstance();
+use App\Models\Eloquent;
+$eloquent = Eloquent::getInstance();
 
 if(isset($_POST["updateClient"])){
     $tableName = "client_profile";

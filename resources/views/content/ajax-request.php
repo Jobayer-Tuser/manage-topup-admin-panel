@@ -1,6 +1,6 @@
 <?php
-use App\Models\Database;
-$eloquent = Database::getInstance();
+use App\Models\Eloquent;
+$eloquent = Eloquent::getInstance();
 
 if(isset($_POST["change_balance"]) && $_POST["change_balance"] == "YES" ){
     $isUpdated = updateLog("balance", $_POST["balanceToUpdate"], $_POST["log_id"]);
@@ -31,7 +31,7 @@ if(isset($_POST["change_number"]) && $_POST["change_number"] == "YES" ){
 
 function updateLog($column, $value, $id)
 {
-    $eloquent = Database::getInstance();
+    $eloquent = Eloquent::getInstance();
     $tableName = "temp_campaign_process_logs";
     $columnValue[$column] = $value;
     $whereValue["id"] = $id;

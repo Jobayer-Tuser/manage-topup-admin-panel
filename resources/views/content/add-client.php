@@ -1,6 +1,6 @@
 <?php
-use App\Models\Database;
-$eloquent = Database::getInstance();
+use App\Models\Eloquent;
+$eloquent = Eloquent::getInstance();
 
 if(isset($_POST['saveNewClient'])){
     if(!empty($_POST['companyId']) && !empty($_POST['clientName']) && !empty($_POST['clientUsername'])&& !empty($_POST['clientStatus'])&& !empty($_POST['clientPass']) )

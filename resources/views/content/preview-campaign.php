@@ -1,10 +1,10 @@
 <?php
-use App\Models\Database;
+use App\Models\Eloquent;
 use App\Http\Controllers\CampaignController;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 use PhpOffice\PhpSpreadsheet\Reader\Exception;
 
-$eloquent = Database::getInstance();
+$eloquent = Eloquent::getInstance();
 $reader = new Xlsx();
 $campaignCtrl = new CampaignController();
 
