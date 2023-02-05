@@ -1,5 +1,4 @@
 <?php
-
 include "config/boostrap.php";
 
 use App\Http\Controllers\View;
