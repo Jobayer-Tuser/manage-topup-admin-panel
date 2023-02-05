@@ -14,16 +14,6 @@ $campaignList = $eloquent->selectData($columnName, $tableName);
 <div class="row layout-top-spacing">
     <div id="flLoginForm" class="col-lg-12 layout-spacing">
         <?php
-        #== REGISTRATION CONFIRMATION MESSAGE
-        if(isset($_POST['addCampaign']))
-        {
-            if($registerCampaign > 0)
-            {
-                echo notification("success", "New campaign saved successfully");
-            } else {
-                echo notification("danger", "Something went wrong Cannot save campaign please recheck");
-            }
-        }
         if (isset($_POST["del_campaign"])){
             if($isDeleted == true){
                 echo notification("success", "New campaign deleted successfully");
@@ -32,8 +22,6 @@ $campaignList = $eloquent->selectData($columnName, $tableName);
             }
         }
         ?>
-
-
 <div class="row layout-top-spacing">
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
         <div class="widget-content widget-content-area br-8">
@@ -47,7 +35,6 @@ $campaignList = $eloquent->selectData($columnName, $tableName);
                     <th>Total Recharge amount</th>
                     <th>Schedule time</th>
                     <th>Status</th>
-                    <th width="15%" >Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -64,12 +51,7 @@ $campaignList = $eloquent->selectData($columnName, $tableName);
                                     <td>{$eachCampaign['total_recharge_amount']}</td>
                                     <td>{$eachCampaign['schedule_time']}</td>
                                     <td><span class="badge outline-badge-{$status} mb-2 me-4">{$eachCampaign['campaign_status']}</span></td>
-                                    <td>
-                                        <form action="" method="post">
-                                            <input type="hidden" name="delCampID" value="{$eachCampaign['id']}"/>
-                                            <button name="del_campaign" type="submit" id="del_campaign" class="btn btn-danger btn-sm mb-2 me-6 _effect--ripple waves-effect waves-light">Delete</button>
-                                        </form>
-                                    </td>
+                                   
                                 </tr>
                                 EOD;
                         echo $admins;
@@ -81,3 +63,10 @@ $campaignList = $eloquent->selectData($columnName, $tableName);
         </div>
     </div>
 </div>
+
+<!--        <td>-->
+<!--            <form action="" method="post">-->
+<!--                <input type="hidden" name="delCampID" value="{$eachCampaign['id']}"/>-->
+<!--                <button name="del_campaign" type="submit" id="del_campaign" class="btn btn-danger btn-sm mb-2 me-6 _effect--ripple waves-effect waves-light">Delete</button>-->
+<!--            </form>-->
+<!--        </td>-->
