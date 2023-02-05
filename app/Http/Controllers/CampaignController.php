@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Database;
+use App\Models\Eloquent;
 
 class CampaignController
 {
@@ -9,7 +9,7 @@ class CampaignController
 
     public function __construct()
     {
-        $this->eloquent = Database::getInstance();
+        $this->eloquent = Eloquent::getInstance();
     }
 
     /**
